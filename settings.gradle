@@ -1,3 +1,4 @@
 rootProject.name = 'javacore'
 
-include 'javaXmlNovice'
+include 'javaXmlNovice',
+        'javaXmlIntAdv'

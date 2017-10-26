@@ -34,30 +34,25 @@ public class JaxBTest {
     }
 
 
+    /**
+     * you need to implement
+     */
     @Test
     public void marshallingTest() {
-
         try (ByteArrayOutputStream outputStream = new ByteArrayOutputStream()) {
             jaxB.marshalClass(testObject, outputStream);
             buffer = outputStream.toByteArray();
         } catch (IOException | JAXBException e) {
             e.printStackTrace();
         }
-
         assertNotNull(buffer);
-        String marsh = new String(buffer);
-        System.out.println(marsh);
 
         SimplePerson resultObject = null;
         try(ByteArrayInputStream inputStream = new ByteArrayInputStream(buffer)) {
             resultObject = jaxB.unmarshalClass(inputStream);
-        } catch (JAXBException | IOException e) {
-            e.printStackTrace();
-        }
+        } catch (JAXBException | IOException e) { }
 
         assertNotNull(resultObject);
         assertThat(resultObject, equalTo(testObject));
-
-        System.out.println(resultObject.toString());
     }
 }
