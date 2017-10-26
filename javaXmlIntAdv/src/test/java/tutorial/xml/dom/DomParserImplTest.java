@@ -57,6 +57,10 @@ public class DomParserImplTest {
     }
 
 
+    /**
+     * implement createXmlDocumentWithOneStudent() method
+     */
+
     @Test
     public void createDomDocumentTest() throws Exception {
         Student originalStudent = new Student("dinkar", "kad", "dinkar", 85, 393);
